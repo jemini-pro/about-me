@@ -289,12 +289,12 @@ h1, h2, h3, h4 {
   margin-right: 6px;
 }
 .hero__figure { margin: 0; }
-.hero__figure a { display: block; }
-.hero__figure img {
+.hero__plate {
   width: 100%;
   height: auto;
-  border: 1px solid var(--line);
+  color: var(--ink-2);
 }
+.plate-sheet { fill: var(--paper-2); }
 .hero__figure figcaption {
   margin-top: 10px;
   font-size: 12.5px;

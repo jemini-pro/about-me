@@ -54,7 +54,7 @@ No custom domain. `.nojekyll` keeps Pages from running the files through Jekyll.
 
 The first build was a kinetic editorial page: numbered section kickers, a marquee, a radar panel, a four-stat strip, seven project cards, scroll reveals and counters. It looked art-directed, but it also looked assembled. Every section had the same shape, and the decoration was doing the work the project information should do.
 
-This version keeps the strong typography and the real project visuals, but turns the page into a designed CV: a clear hero, three structured case studies, a compact index of smaller projects, skills, experience, and a contact close.
+This version keeps the strong typography and the real project visuals, but turns the page into a designed CV: a clear hero, four structured case studies, a compact index of smaller projects, skills, experience, and a contact close.
 
 ### What was cut
 
@@ -66,7 +66,7 @@ This version keeps the strong typography and the real project visuals, but turns
 
 ### What is there now
 
-- **A hero with a real artifact.** Name, role, summary, contact actions, three CV facts, and the GeoMapper 3D screenshot. The screenshot replaces the old radar panel.
+- **A hero with a drawn artifact.** Name, role, summary, contact actions, three CV facts, and a technical flight-plan plate: seven passes over a 240 × 180 m site, drawn in inline SVG with a launch point, survey grid, north arrow and dimensions. It replaces the old radar panel; the GeoMapper screenshot now appears once, in its own case study.
 - **Four case studies.** Each has a left metadata rail (year, context, role, status), a title, a lede, two or three scannable points, and a figure where one helps:
   - **Client portal** — the upload path as a responsive HTML flow: browser to S3, app server signing presigned URLs, lifecycle to IA and Glacier.
   - **GeoMapper 3D** — a wide crop of the real screenshot.
@@ -102,14 +102,6 @@ Copy an `<article class="case"> … </article>` inside `#work` and edit it. The 
 
 ```html
 <article class="case">
-  <aside class="case__meta">
-    <dl>
-      <div><dt>Year</dt><dd>2026</dd></div>
-      <div><dt>Context</dt><dd>Independent</dd></div>
-      <div><dt>Role</dt><dd>Solo build</dd></div>
-      <div><dt>Status</dt><dd>Open source</dd></div>
-    </dl>
-  </aside>
   <div class="case__body">
     <h3>Project name</h3>
     <p class="case__lede">What it is.</p>
@@ -119,8 +111,18 @@ Copy an `<article class="case"> … </article>` inside `#work` and edit it. The 
     </ul>
     <p class="case__link"><a href="https://…" rel="noopener">github.com/… ↗</a></p>
   </div>
+  <div class="case__meta">
+    <dl>
+      <div><dt>Year</dt><dd>2026</dd></div>
+      <div><dt>Context</dt><dd>Independent</dd></div>
+      <div><dt>Role</dt><dd>Solo build</dd></div>
+      <div><dt>Status</dt><dd>Open source</dd></div>
+    </dl>
+  </div>
 </article>
 ```
+
+Keep the body first. The grid places the rail on the left on desktop and below the body on mobile, so the project title is always read before the metadata.
 
 ### Add a figure
 
@@ -163,7 +165,7 @@ The content was rebuilt against the live repos, not just restyled.
 - **Licence:** GVC remote pilot (CAA), around 30 hours in civilian gliders.
 - **Redactions held:** no exact coordinates, headcount beyond "small company", client names, site locations or licence numbers.
 
-Nothing on the page is invented. The GeoMapper hero and case figure use a real screenshot; the agent ledger is from the usage dashboard; the portal flow and F1 drawing are schematic, and captioned as such.
+Nothing on the page is invented. The GeoMapper case figure uses a real screenshot and the agent ledger is from the usage dashboard; the hero flight plan, portal flow and F1 drawing are schematic, and captioned as such.
 
 ---
 
@@ -171,7 +173,7 @@ Nothing on the page is invented. The GeoMapper hero and case figure use a real s
 
 - Skip link; semantic landmarks; every section has an `aria-labelledby`.
 - Visible `:focus-visible` rings, never removed.
-- The hero screenshot and the F1 drawing have alt text; the flow and ledger are real text, not images.
+- The hero plate and the F1 drawing have alt text; the flow and ledger are real text, not images.
 - The theme toggle is a real button with `aria-pressed` and a state-dependent label.
 - Light and dark are both first-class; body text is ~10:1 on paper.
 - `prefers-reduced-motion` removes the remaining transitions.
@@ -179,7 +181,7 @@ Nothing on the page is invented. The GeoMapper hero and case figure use a real s
 ## Performance
 
 - One CSS file, one ~35-line JS file, no dependencies, no build.
-- One raster asset, used twice (hero and GeoMapper detail); Fig. 1 is an HTML flow, Fig. 3 is a CSS ledger and Fig. 4 is inline SVG.
+- One raster asset (the GeoMapper detail); the hero plate and Fig. 4 are inline SVG, Fig. 1 is an HTML flow and Fig. 3 is a CSS ledger.
 - Two font families with only the weights used.
 - No scroll listeners, no observers, no animation frames.
 
