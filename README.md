@@ -12,7 +12,7 @@ Personal site for **Jem Karaceylan** — Operations Manager at Survey Air, a dro
 ```
 about-me/
 ├── index.html              # single page, all content
-├── styles.css              # tokens, type, one-column layout, light + dark
+├── styles.css              # tokens, type, case studies, light + dark
 ├── script.js               # theme toggle and footer year (no deps)
 ├── assets/
 │   └── geomapper-3d.png    # real GeoMapper 3D screenshot
@@ -50,31 +50,31 @@ No custom domain. `.nojekyll` keeps Pages from running the files through Jekyll.
 
 ---
 
-## Design direction: subtractive editorial
+## Design direction: project-led editorial CV
 
-The previous build was a kinetic editorial page: numbered section kickers, a marquee, a radar panel, a four-stat strip, seven project cards, scroll reveals and counters. It looked art-directed, but it also looked assembled. Every section had the same shape, and the decoration was doing the work the writing should do.
+The first build was a kinetic editorial page: numbered section kickers, a marquee, a radar panel, a four-stat strip, seven project cards, scroll reveals and counters. It looked art-directed, but it also looked assembled. Every section had the same shape, and the decoration was doing the work the project information should do.
 
-This version is one column, two typefaces and three figures. It reads like an essay rather than a landing page.
+This version keeps the strong typography and the real project visuals, but turns the page into a designed CV: a clear hero, three structured case studies, a compact index of smaller projects, skills, experience, and a contact close.
 
 ### What was cut
 
 - The five identical section openers (numbered kicker, two-line display heading, italic orange payoff, 34ch aside).
 - The marquee, role rotator, radar panel, green "Available" dot and the four-stat brag strip.
-- Project cards, chip walls, rail controls, progress bars and drag-scroll behaviour.
-- Scroll reveals on every element, counters, the live clock and the sticky blurred header.
+- Uniform project cards, chip walls, rail controls, progress bars and drag-scroll behaviour.
+- Scroll reveals on every element, counters, the live clock and the blurred sticky header.
 - Copy that explained its own design ("Not a wall of logos…", "Kept short on purpose…").
 
-### What replaced it
+### What is there now
 
-- **A masthead, a title block and prose.** The page opens with a dateline, the name, and a standfirst, then goes straight into the work.
-- **Work as an annotated list.** Each project is a heading, a small meta line and one paragraph. Public projects get a repo link. Private work is labelled private.
-- **Three figures, each doing a job.**
-  - **Fig. 1** — the client portal upload path, drawn as a responsive HTML flow: browser to S3, app server signing presigned URLs, lifecycle to IA and Glacier.
-  - **Fig. 2** — the real GeoMapper 3D screenshot.
-  - **Fig. 3** — the dissertation's wing and endplate drawing, redrawn as an inline SVG.
-- **Tools as a definition list and Record as a plain two-column list.** No chips, no timeline tags, no hover backgrounds.
-- **Now as four short paragraphs** with run-in italic labels.
-- **Contact as text.** A large email link, phone, location, and nothing else.
+- **A hero with a real artifact.** Name, role, summary, contact actions, three CV facts, and the GeoMapper 3D screenshot. The screenshot replaces the old radar panel.
+- **Three case studies.** Each has a left metadata rail (year, context, role, status), a title, a lede, two or three scannable points, and a figure where one helps:
+  - **Client portal** — the upload path as a responsive HTML flow: browser to S3, app server signing presigned URLs, lifecycle to IA and Glacier.
+  - **GeoMapper 3D** — a wide crop of the real screenshot.
+  - **F1 wing endplates** — the dissertation's wing and endplate drawing, redrawn as inline SVG.
+- **A compact "More work" index.** Four smaller projects with year, one-line description and a private/open-source link.
+- **Skills as a two-column matrix** grouped by job, not a wall of chips.
+- **Experience as a dated list.** Role, independent software, degree, flying.
+- **A dark contact close.** Large email, phone, GitHub, location, and a footer line.
 
 ### Type and colour
 
@@ -85,55 +85,61 @@ This version is one column, two typefaces and three figures. It reads like an es
 
 Two families, not three. JetBrains Mono was removed: the mono labels were half the "technical template" voice.
 
-Paper (`#f3f0e8`), ink (`#141412`), and one rust accent (`#a83a14`) used for links and figure numbers. Dark mode is a true dark (`#0d0d0b`), not an inverted grey. No grain overlay.
+Paper (`#f3f0e8`), ink (`#141412`), and one rust accent (`#a83a14`) used for links, figure numbers and the short section rules. Dark mode is a true dark (`#0d0d0b`). The contact band inverts: dark on light mode, light on dark mode.
 
 ### Motion
 
-There is almost none. Links and the theme toggle have short colour transitions. Nothing moves on scroll. `prefers-reduced-motion` still zeroes the remaining transitions.
+There is almost none. Links, buttons and the theme toggle have short colour transitions. Nothing moves on scroll. `prefers-reduced-motion` zeroes the remaining transitions.
 
 ---
 
 ## Editing the site
 
-### Add a project
+### Add a case study
 
-Copy any `<article class="entry"> … </article>` inside `#work` and edit it. Public projects get an `.entry-link` line; private ones do not.
+Copy an `<article class="case"> … </article>` inside `#work` and edit it. The layout is a 190px metadata rail plus the body.
 
 ```html
-<article class="entry">
-  <div class="entry__head">
+<article class="case">
+  <aside class="case__meta">
+    <dl>
+      <div><dt>Year</dt><dd>2026</dd></div>
+      <div><dt>Context</dt><dd>Independent</dd></div>
+      <div><dt>Role</dt><dd>Solo build</dd></div>
+      <div><dt>Status</dt><dd>Open source</dd></div>
+    </dl>
+  </aside>
+  <div class="case__body">
     <h3>Project name</h3>
-    <p class="entry-meta">2026 · open source</p>
+    <p class="case__lede">What it is.</p>
+    <ul class="case__points">
+      <li>What it does.</li>
+      <li>Why it matters.</li>
+    </ul>
+    <p class="case__link"><a href="https://…" rel="noopener">github.com/… ↗</a></p>
   </div>
-  <p>What it is and why it exists.</p>
-  <p class="entry-link"><a href="https://…" rel="noopener">github.com/…</a></p>
 </article>
 ```
 
 ### Add a figure
 
-Copy a `<figure class="figure"> … </figure>`. Figure numbers are written by hand in the caption, so renumber the ones after it if you insert in the middle.
+Copy a `<figure class="case__figure"> … </figure>`. Figure numbers are written by hand, so renumber the ones after it if you insert in the middle.
 
-```html
-<figure class="figure">
-  <div class="figure__frame">
-    <img src="./assets/name.png" alt="…" width="1400" height="900" loading="lazy" />
-  </div>
-  <figcaption><span class="figure__no">Fig. 4</span> Caption.</figcaption>
-</figure>
-```
+Use `.case__shot` for a 16:9 image crop, `.flow` for the upload diagram, and `.case__figure--drawing` for the technical drawing.
 
-Use `.figure--diagram` for a frameless flow (like Fig. 1) and `.figure--drawing` for technical drawings.
+### Add a project to "More work"
 
-### Update the "Now" section
+Copy an `<li>` in `.more__list`. Keep the year, title, one-line description and tag.
 
-Edit the four paragraphs in `#now` and the `November 2026` dateline above them.
+### Update Skills or Experience
+
+Edit the four blocks in `#skills` or the `<li>` rows in `#experience`. Keep the lists plain; no chips.
 
 ### Re-render the social image
 
 `og-source.html` is a 600×315 page designed to be captured at 2× and saved as `og.png` (1200×630). Open it at 600×315 in a browser, screenshot the viewport, and save over `og.png`.
 
-The checked-in `og.png` still shows the previous design. Re-render it from `og-source.html` before publishing so link previews match the page.
+The checked-in `og.png` still shows the original design. Re-render it from `og-source.html` before publishing so link previews match the page.
 
 ---
 
@@ -151,7 +157,7 @@ The content was rebuilt against the live repos, not just restyled.
 - **Licence:** GVC remote pilot (CAA), around 30 hours in civilian gliders.
 - **Redactions held:** no exact coordinates, headcount beyond "small company", client names, site locations or licence numbers.
 
-Nothing on the page is invented. The GeoMapper figure uses a real screenshot; the portal diagram and F1 drawing are schematic, and captioned as such.
+Nothing on the page is invented. The GeoMapper hero and case figure use a real screenshot; the portal flow and F1 drawing are schematic, and captioned as such.
 
 ---
 
@@ -159,15 +165,15 @@ Nothing on the page is invented. The GeoMapper figure uses a real screenshot; th
 
 - Skip link; semantic landmarks; every section has an `aria-labelledby`.
 - Visible `:focus-visible` rings, never removed.
-- Figures with SVG use `role="img"` and an `aria-label`; the screenshot has alt text.
+- The hero screenshot and the F1 drawing have alt text; the flow is real text, not an image.
 - The theme toggle is a real button with `aria-pressed` and a state-dependent label.
-- Light and dark are both first-class; body text is ~12:1 on paper.
+- Light and dark are both first-class; body text is ~10:1 on paper.
 - `prefers-reduced-motion` removes the remaining transitions.
 
 ## Performance
 
 - One CSS file, one ~35-line JS file, no dependencies, no build.
-- One raster image on the page (`assets/geomapper-3d.png`, lazy-loaded); Fig. 1 is an HTML flow and Fig. 3 is inline SVG.
+- One raster asset, used twice (hero and GeoMapper detail); Fig. 1 is an HTML flow and Fig. 3 is inline SVG.
 - Two font families with only the weights used.
 - No scroll listeners, no observers, no animation frames.
 
