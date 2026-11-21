@@ -54,7 +54,7 @@ No custom domain. `.nojekyll` keeps Pages from running the files through Jekyll.
 
 The previous build was a kinetic editorial page: numbered section kickers, a marquee, a radar panel, a four-stat strip, seven project cards, scroll reveals and counters. It looked art-directed, but it also looked assembled. Every section had the same shape, and the decoration was doing the work the writing should do.
 
-This version is one column, two typefaces and three figures. It reads like an essay rather than a landing page.
+This version is one column, two typefaces and four figures. It reads like an essay rather than a landing page.
 
 ### What was cut
 
@@ -68,10 +68,11 @@ This version is one column, two typefaces and three figures. It reads like an es
 
 - **A masthead, a title block and prose.** The page opens with a dateline, the name, and a standfirst, then goes straight into the work.
 - **Work as an annotated list.** Each project is a heading, a small meta line and one paragraph. Public projects get a repo link. Private work is labelled private.
-- **Three figures, each doing a job.**
+- **Four figures, each doing a job.**
   - **Fig. 1** — the client portal upload path, drawn as a responsive HTML flow: browser to S3, app server signing presigned URLs, lifecycle to IA and Glacier.
   - **Fig. 2** — the real GeoMapper 3D screenshot.
-  - **Fig. 3** — the dissertation's wing and endplate drawing, redrawn as an inline SVG.
+  - **Fig. 3** — a printed-style ledger of ninety days of agent usage: sessions, tokens and cache savings, with the two harnesses named. A table, not a stat strip.
+  - **Fig. 4** — the dissertation's wing and endplate drawing, redrawn as an inline SVG.
 - **Tools as a definition list and Record as a plain two-column list.** No chips, no timeline tags, no hover backgrounds.
 - **Now as four short paragraphs** with run-in italic labels.
 - **Contact as text.** A large email link, phone, location, and nothing else.
@@ -125,6 +126,10 @@ Copy a `<figure class="figure"> … </figure>`. Figure numbers are written by ha
 
 Use `.figure--diagram` for a frameless flow (like Fig. 1) and `.figure--drawing` for technical drawings.
 
+### Update the agent ledger
+
+Fig. 3 lives in `#work`, between the skills library entry and the dissertation entry. Each `.ledger__row` is a `<dt>` label with a `<small>` sub-line and a `<dd>` value. Update the three values and the "Ninety days to …" line together, or the figure will claim a window it no longer covers. Take the numbers from the usage dashboard's 90-day view; keep the API-equivalent caption.
+
 ### Update the "Now" section
 
 Edit the four paragraphs in `#now` and the `November 2026` dateline above them.
@@ -147,6 +152,7 @@ The content was rebuilt against the live repos, not just restyled.
 - **dashboard-v2** is the full command centre: stdlib-only Python API, SQLite metrics history, Caddy deploy with rollback, agents for Linux, macOS, Windows, Proxmox and Docker.
 - **discord-activity** is a TypeScript daily math game with date-seeded puzzles, five difficulty bands, streaks and per-guild leaderboards.
 - **The client portal and skills library** are private systems, described but not linked.
+- **The agent ledger (Fig. 3)** is taken from the usage dashboard's 90-day view: 1,364 sessions, 6.68B tokens, 4.99B cached input and $3,302.39 of cache savings between 24 August and 21 November 2026. It is labelled as an API-equivalent estimate; no spend figure is shown.
 - **Degree:** BSc (Hons) Aerospace Engineering, Swansea University, 2019, 2.1. Dissertation on Formula One wing endplates.
 - **Licence:** GVC remote pilot (CAA), around 30 hours in civilian gliders.
 - **Redactions held:** no exact coordinates, headcount beyond "small company", client names, site locations or licence numbers.
@@ -167,7 +173,7 @@ Nothing on the page is invented. The GeoMapper figure uses a real screenshot; th
 ## Performance
 
 - One CSS file, one ~35-line JS file, no dependencies, no build.
-- One raster image on the page (`assets/geomapper-3d.png`, lazy-loaded); Fig. 1 is an HTML flow and Fig. 3 is inline SVG.
+- One raster image on the page (`assets/geomapper-3d.png`, lazy-loaded); Fig. 1 is an HTML flow, Fig. 3 is a CSS ledger and Fig. 4 is inline SVG.
 - Two font families with only the weights used.
 - No scroll listeners, no observers, no animation frames.
 
