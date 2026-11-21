@@ -5,148 +5,66 @@
 <title>OG source — capture at 600×315, 2×</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500&display=swap" />
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; width: 600px; height: 315px; overflow: hidden; }
   body {
-    display: grid;
-    grid-template-columns: 1fr 196px;
-    gap: 22px;
-    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    padding: 34px 36px 30px;
     background: #f3f0e8;
-    color: #111110;
+    color: #141412;
     font-family: 'Space Grotesk', system-ui, sans-serif;
-    position: relative;
   }
-  body::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: .03;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  .dateline {
+    margin: 0 0 26px;
+    font-size: 8px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #6c695f;
   }
-  .left { display: flex; flex-direction: column; min-width: 0; position: relative; z-index: 1; }
-  .brand {
-    display: flex; align-items: center; gap: 7px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 7.5px; letter-spacing: .16em; text-transform: uppercase;
-    color: #6f6d63;
-  }
-  .brand b { color: #111110; font-weight: 500; }
-  .mark {
-    width: 15px; height: 15px; border: 1px solid #111110; border-radius: 50%;
-    display: grid; place-items: center; position: relative;
-  }
-  .mark::before, .mark::after {
-    content: ""; position: absolute; background: #111110; opacity: .35;
-  }
-  .mark::before { width: 1px; height: 15px; }
-  .mark::after { height: 1px; width: 15px; }
-  .mark i { width: 4px; height: 4px; border-radius: 50%; background: #ff4d12; z-index: 1; }
   h1 {
-    margin: 14px 0 0;
+    margin: 0 0 14px;
     font-family: 'Instrument Serif', Georgia, serif;
     font-weight: 400;
-    font-size: 84px;
-    line-height: .78;
-    letter-spacing: -.045em;
+    font-size: 72px;
+    line-height: .9;
+    letter-spacing: -.035em;
   }
-  h1 span { display: block; }
-  h1 em { display: block; font-style: italic; margin-left: .26em; }
-  .role {
-    margin: 16px 0 0;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 8.5px; letter-spacing: .15em; text-transform: uppercase;
-    color: #bd3a0c;
-  }
-  .sub {
-    margin: 7px 0 0;
-    font-size: 10.5px; line-height: 1.45; color: #38372f;
-    max-width: 34ch;
+  h1 .dot { color: #a83a14; }
+  .standfirst {
+    margin: 0;
+    max-width: 46ch;
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: #3a382f;
   }
   .foot {
     margin-top: auto;
-    display: flex; justify-content: space-between; gap: 10px;
-    padding-top: 9px;
-    border-top: 1px solid rgba(17,17,16,.16);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 7px; letter-spacing: .1em; text-transform: uppercase;
-    color: #6f6d63;
-  }
-  .panel {
-    background: #141412;
-    border: 1px solid rgba(242,239,230,.16);
-    color: #f2efe6;
-    padding: 10px;
-    display: flex; flex-direction: column;
-    position: relative; z-index: 1;
-  }
-  .panel__head {
-    display: flex; justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 6px; letter-spacing: .12em; text-transform: uppercase;
-    color: rgba(242,239,230,.55);
-    padding-bottom: 7px; border-bottom: 1px solid rgba(242,239,230,.16);
-  }
-  .panel__head b { color: #79e08b; font-weight: 400; }
-  .radar { flex: 1; display: grid; place-items: center; }
-  .radar svg { width: 100%; max-width: 168px; }
-  .readout {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-    background: rgba(242,239,230,.16);
-    border: 1px solid rgba(242,239,230,.16);
-  }
-  .readout div { background: #141412; padding: 5px 6px; }
-  .readout span {
-    display: block; font-family: 'JetBrains Mono', monospace;
-    font-size: 5.5px; letter-spacing: .12em; text-transform: uppercase;
-    color: rgba(242,239,230,.45); margin-bottom: 2px;
-  }
-  .readout b {
-    display: block; font-family: 'JetBrains Mono', monospace;
-    font-size: 7px; font-weight: 400; letter-spacing: .03em; color: #f2efe6;
+    padding-top: 10px;
+    border-top: 1px solid rgba(20, 20, 18, .18);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 8px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #6c695f;
   }
 </style>
 </head>
 <body>
-  <div class="left">
-    <div class="brand"><span class="mark"><i></i></span> <b>Jem Karaceylan</b> / about</div>
-    <h1><span>Jem</span><em>Karaceylan</em></h1>
-    <p class="role">Operations Manager — Survey Air</p>
-    <p class="sub">Operations Manager at Survey Air. Flight ops, photogrammetry and LiDAR on site. Portals, pipelines and agents in code.</p>
-    <div class="foot"><span>jemini-pro.github.io/about-me</span><span>Farnham, UK</span></div>
-  </div>
-
-  <div class="panel">
-    <div class="panel__head"><span>Field unit / 01</span><b>● Available</b></div>
-    <div class="radar">
-      <svg viewBox="0 0 320 320" aria-hidden="true">
-        <g fill="none" stroke="#f2efe6" stroke-width="1">
-          <circle cx="160" cy="160" r="140" opacity=".22" />
-          <circle cx="160" cy="160" r="104" opacity=".16" />
-          <circle cx="160" cy="160" r="68" opacity=".12" />
-          <circle cx="160" cy="160" r="32" opacity=".1" />
-          <path d="M160 14v292M14 160h292" opacity=".14" />
-          <path d="M56 56l208 208M264 56L56 264" opacity=".06" />
-        </g>
-        <path d="M160 160 L160 20 A140 140 0 0 1 259 61 Z" fill="#ff4d12" opacity=".2" />
-        <line x1="160" y1="160" x2="160" y2="20" stroke="#ff4d12" stroke-width="1.4" opacity=".85" />
-        <g fill="#ff4d12">
-          <circle cx="222" cy="108" r="4" />
-          <circle cx="112" cy="206" r="3" opacity=".7" />
-          <circle cx="186" cy="238" r="2.6" opacity=".55" />
-        </g>
-        <path d="M160 142l4.4 14.6 16.6 6.2v4.2l-16.6-2.4-2.2 12.4 6.2 5.2v3.4l-8.4-3-8.4 3v-3.4l6.2-5.2-2.2-12.4-16.6 2.4v-4.2l16.6-6.2z" fill="none" stroke="#f2efe6" stroke-width="2" />
-      </svg>
-    </div>
-    <div class="readout">
-      <div><span>Local</span><b>Farnham</b></div>
-      <div><span>Base</span><b>Surrey, UK</b></div>
-      <div><span>Licence</span><b>GVC · CAA</b></div>
-      <div><span>Airframe</span><b>Glider · UAV</b></div>
-    </div>
+  <p class="dateline">Farnham, Surrey · November 2026</p>
+  <h1>Jem Karaceylan<span class="dot">.</span></h1>
+  <p class="standfirst">Operations Manager at Survey Air. Drone surveys, photogrammetry and LiDAR, and the software that delivers the data.</p>
+  <div class="foot">
+    <span>jemini-pro.github.io/about-me</span>
+    <span>Operations Manager, Survey Air</span>
   </div>
 </body>
 </html>

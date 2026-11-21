@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jem Karaceylan — Building the software behind drone survey work</title>
-  <meta name="description" content="Operations Manager at a drone survey company. Flight ops, photogrammetry and LiDAR on site. Client portals, pipelines and agents in code. Farnham, UK." />
+  <title>Jem Karaceylan — Operations Manager, Survey Air</title>
+  <meta name="description" content="Operations Manager at Survey Air in Surrey. Drone survey operations, photogrammetry and LiDAR, and the software that delivers the data." />
   <link rel="canonical" href="https://jemini-pro.github.io/about-me/" />
   <meta name="author" content="Jem Karaceylan" />
   <meta name="color-scheme" content="light dark" />
@@ -13,27 +13,27 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Jem Karaceylan — Building the software behind drone survey work" />
-  <meta property="og:description" content="Operations Manager at a drone survey company. Flight ops, photogrammetry and LiDAR on site. Client portals, pipelines and agents in code. Farnham, UK." />
+  <meta property="og:title" content="Jem Karaceylan — Operations Manager, Survey Air" />
+  <meta property="og:description" content="Operations Manager at Survey Air in Surrey. Drone survey operations, photogrammetry and LiDAR, and the software that delivers the data." />
   <meta property="og:url" content="https://jemini-pro.github.io/about-me/" />
   <meta property="og:image" content="https://jemini-pro.github.io/about-me/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:alt" content="Jem Karaceylan — Building the software behind drone survey work." />
+  <meta property="og:image:alt" content="Jem Karaceylan — Operations Manager at Survey Air." />
   <meta property="og:site_name" content="Jem Karaceylan" />
   <meta property="og:locale" content="en_GB" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Jem Karaceylan — Building the software behind drone survey work" />
-  <meta name="twitter:description" content="Operations Manager at a drone survey company. Flight ops, photogrammetry and LiDAR. Client portals, pipelines and agents. Farnham, UK." />
+  <meta name="twitter:title" content="Jem Karaceylan — Operations Manager, Survey Air" />
+  <meta name="twitter:description" content="Operations Manager at Survey Air in Surrey. Drone survey operations, photogrammetry and LiDAR, and the software that delivers the data." />
   <meta name="twitter:image" content="https://jemini-pro.github.io/about-me/og.png" />
-  <meta name="twitter:image:alt" content="Jem Karaceylan — Building the software behind drone survey work." />
+  <meta name="twitter:image:alt" content="Jem Karaceylan — Operations Manager at Survey Air." />
 
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400&display=swap" />
 
   <!-- Set theme before first paint so there is no flash -->
   <script>
@@ -46,6 +46,7 @@
   </script>
 
   <link rel="stylesheet" href="./styles.css" />
+  <noscript><style>.theme-toggle { display: none; }</style></noscript>
 
   <script type="application/ld+json">
   {
@@ -78,550 +79,248 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
-
-  <header class="site-header" role="banner">
-    <div class="wrap site-header__inner">
-      <a class="brand" href="#top" aria-label="Jem Karaceylan — home">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="9.5" />
-            <path d="M12 2.5v19M2.5 12h19" opacity=".45" />
-            <circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none" />
-          </svg>
-        </span>
-        <span class="brand__name">Jem Karaceylan</span>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#stack">Stack</a>
-        <a href="#timeline">Record</a>
-        <a href="#now">Now</a>
-        <a href="#contact">Contact</a>
+  <header class="masthead">
+    <div class="page masthead__inner">
+      <p class="masthead__place">Farnham, Surrey</p>
+      <nav class="masthead__links" aria-label="Site">
+        <a href="mailto:jkaraceylan@gmail.com">Email</a>
+        <a href="https://github.com/jemini-pro" rel="me noopener">GitHub</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark</button>
       </nav>
-
-      <div class="header-tools">
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
-          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8" />
-          </svg>
-          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" />
-          </svg>
-        </button>
-        <a class="header-cta" href="https://github.com/jemini-pro" rel="me noopener">
-          GitHub
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <path d="M7 17 17 7M9 7h8v8" />
-          </svg>
-        </a>
-      </div>
     </div>
   </header>
 
   <main id="main">
+    <article class="page">
 
-    <!-- ============================ HERO ============================ -->
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap hero__grid">
-        <div class="hero__type">
-          <p class="eyebrow">
-            <span class="eyebrow__pulse" aria-hidden="true"></span>
-            Operations Manager — Survey Air
-            <span class="eyebrow__sep" aria-hidden="true">/</span>
-            Farnham, UK
-          </p>
+      <header class="title-block column" id="top">
+        <p class="dateline">November 2026</p>
+        <h1>Jem Karaceylan</h1>
+        <p class="standfirst">Operations Manager at Survey Air. I plan and fly drone surveys two days a week, and build the software that delivers the data the rest of the week.</p>
+      </header>
 
-          <h1 class="hero__name" id="hero-title">
-            <span class="hero__name-line">Jem</span>
-            <span class="hero__name-line hero__name-line--italic"><em>Karaceylan</em></span>
-          </h1>
+      <div class="column prose">
+        <p>I studied aerospace engineering at Swansea, where my dissertation was on Formula One wing aerodynamics. Now I work at a small drone survey company in Surrey. The job is part operations, part software. Most weeks that means flight planning, client calls and compliance paperwork. It also means a lot of code.</p>
+      </div>
 
-          <p class="hero__roles">
-            <span class="rotator" aria-hidden="true">
-              <span class="rotator__item" style="--i:0">Operations Manager</span>
-              <span class="rotator__item" style="--i:1">Aerospace Engineer</span>
-              <span class="rotator__item" style="--i:2">Software Engineer</span>
-              <span class="rotator__item" style="--i:3">Geospatial Builder</span>
-            </span>
-            <span class="sr-only">Operations Manager, Aerospace Engineer, Software Engineer, Geospatial Builder</span>
-          </p>
+      <!-- ============================ WORK ============================ -->
+      <section class="movement" id="work" aria-labelledby="work-h">
+        <div class="column">
+          <h2 id="work-h">Work</h2>
+          <p class="intro">Client systems, public repos, private tools and one dissertation. The first two are the day job; the rest are outside it.</p>
 
-          <p class="hero__lede">
-            I'm Jem, Operations Manager at Survey Air in Surrey. Two days a week I plan and fly survey
-            missions. The rest of the time I build the portal, the pipelines and the agent that get the
-            data to the client. Aerospace engineer by training, glider pilot by choice.
-          </p>
-
-          <div class="hero__ctas">
-            <a class="btn btn--solid" href="#work">
-              See the work
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </a>
-            <a class="btn btn--line" href="mailto:jkaraceylan@gmail.com">Email Jem</a>
-          </div>
+          <article class="entry">
+            <div class="entry__head">
+              <h3>Client portal</h3>
+              <p class="entry-meta">2026 · Survey Air · private</p>
+            </div>
+            <p>A Next.js portal that replaced a WordPress site and an FTP folder. Clients sign in with Google, see only their own projects, and upload straight from the browser to S3 in multipart chunks. Files move from Standard to Infrequent Access to Glacier on a schedule. The app server never touches the file data.</p>
+          </article>
         </div>
 
-        <!-- Instrument panel: the aerospace half of the story, rendered live -->
-        <aside class="panel" aria-label="At a glance">
-          <div class="panel__head">
-            <span class="panel__id">FIELD UNIT / 01</span>
-            <span class="panel__status"><i aria-hidden="true"></i> Available</span>
+        <figure class="figure figure--diagram">
+          <div class="flow">
+            <div class="flow__row">
+              <div class="flow__box"><b>Browser</b><span>multipart upload</span></div>
+              <span class="flow__arrow" aria-hidden="true">→</span>
+              <div class="flow__box"><b>S3 Standard</b><span>originals</span></div>
+              <span class="flow__arrow" aria-hidden="true">→</span>
+              <div class="flow__box"><b>S3 IA</b><span>infrequent access</span></div>
+              <span class="flow__arrow" aria-hidden="true">→</span>
+              <div class="flow__box"><b>S3 Glacier</b><span>archive</span></div>
+            </div>
+            <p class="flow__note">The Next.js app handles SSO, roles and presigned URLs. File data never passes through it.</p>
           </div>
+          <figcaption><span class="figure__no">Fig. 1</span> The client portal upload path. The browser talks to S3 directly; the app server only signs the request.</figcaption>
+        </figure>
 
-          <div class="radar" aria-hidden="true">
-            <svg viewBox="0 0 320 320" role="presentation">
-              <defs>
-                <radialGradient id="sweep" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#ff4d12" stop-opacity=".38" />
-                  <stop offset="100%" stop-color="#ff4d12" stop-opacity="0" />
-                </radialGradient>
-              </defs>
-              <g class="radar__grid" fill="none" stroke="currentColor" stroke-width="1">
-                <circle cx="160" cy="160" r="140" opacity=".22" />
-                <circle cx="160" cy="160" r="104" opacity=".16" />
-                <circle cx="160" cy="160" r="68" opacity=".12" />
-                <circle cx="160" cy="160" r="32" opacity=".1" />
-                <path d="M160 14v292M14 160h292" opacity=".14" />
-                <path d="M56 56l208 208M264 56L56 264" opacity=".07" />
+        <div class="column">
+          <article class="entry">
+            <div class="entry__head">
+              <h3>Survey Air tooling</h3>
+              <p class="entry-meta">2025–now · Survey Air · private</p>
+            </div>
+            <p>Batch scripts for photogrammetry and LiDAR, a DNG to JPEG pipeline, a CLIP image sorter and a volume calculator for point clouds. None of it is glamorous. Each one removed a manual step from the week.</p>
+          </article>
+
+          <article class="entry">
+            <div class="entry__head">
+              <h3>GeoMapper 3D</h3>
+              <p class="entry-meta">2025–26 · open source</p>
+            </div>
+            <p>Drop a ZIP of drone photos into a browser and see them plotted in real-world 3D. Altitude becomes height, camera frustums show heading, and the view falls back to a 2D coverage map past 2,000 photos. It renders 30,000 points in seconds.</p>
+            <p class="entry-link"><a href="https://github.com/jemini-pro/3D_Georeference" rel="noopener">github.com/jemini-pro/3D_Georeference</a></p>
+          </article>
+        </div>
+
+        <figure class="figure">
+          <div class="figure__frame">
+            <img src="./assets/geomapper-3d.png" alt="GeoMapper 3D showing geotagged photo markers hovering over an OpenStreetMap ground plane with 3D building masses" width="1400" height="900" loading="lazy" />
+          </div>
+          <figcaption><span class="figure__no">Fig. 2</span> GeoMapper 3D. Thirty thousand photo positions over OpenStreetMap building masses and Copernicus terrain.</figcaption>
+        </figure>
+
+        <div class="column">
+          <article class="entry">
+            <div class="entry__head">
+              <h3>dashboard-v2</h3>
+              <p class="entry-meta">2026 · open source</p>
+            </div>
+            <p>A command centre for the home lab. Stdlib-only Python API, SQLite history, deploy and rollback scripts, and agents for Linux, macOS, Windows, Proxmox and Docker that push metrics every 60 seconds.</p>
+            <p class="entry-link"><a href="https://github.com/jemini-pro/dashboard-v2" rel="noopener">github.com/jemini-pro/dashboard-v2</a></p>
+          </article>
+
+          <article class="entry">
+            <div class="entry__head">
+              <h3>Discord Math Game</h3>
+              <p class="entry-meta">2026 · open source</p>
+            </div>
+            <p>A daily number puzzle for Discord servers. Puzzles are seeded by date so everyone gets the same one, difficulty runs in five bands, and guesses come back warmer or colder. The game engine sits behind a tested seam.</p>
+            <p class="entry-link"><a href="https://github.com/jemini-pro/discord-activity" rel="noopener">github.com/jemini-pro/discord-activity</a></p>
+          </article>
+
+          <article class="entry">
+            <div class="entry__head">
+              <h3>Skills library</h3>
+              <p class="entry-meta">2026 · private</p>
+            </div>
+            <p>One set of procedures, read by three different coding agents. Each skill has a shared core and per-harness frontmatter; a projection script installs them into Claude Code, Codex and Hermes. Shell tests check the projection before it ships.</p>
+          </article>
+
+          <article class="entry">
+            <div class="entry__head">
+              <h3>F1 wing endplates</h3>
+              <p class="entry-meta">2019 · dissertation</p>
+            </div>
+            <p>Two endplate specifications designed against Formula One regulations, then compared in CFD and a wind tunnel. Swansea University, 2019. Available on request.</p>
+          </article>
+        </div>
+
+        <figure class="figure figure--drawing">
+          <div class="figure__frame">
+            <svg viewBox="0 0 640 340" role="img" aria-label="Technical drawing of a wing with an endplate, dimensioned at 1.4 metres">
+              <g class="fig-line" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M78 196c52-30 130-46 242-43 62 1 111 12 146 30" />
+                <path d="M78 196c57 19 141 30 244 27 60-1 108-8 144-19" />
+                <path d="M466 126h30c8 0 14 7 14 15v80c0 8-6 15-14 15h-30" />
+                <path d="M466 126v110" opacity=".35" />
               </g>
-              <g class="radar__sweep">
-                <path d="M160 160 L160 20 A140 140 0 0 1 259 61 Z" fill="url(#sweep)" />
-                <line x1="160" y1="160" x2="160" y2="20" stroke="#ff4d12" stroke-width="1.4" opacity=".8" />
+              <g class="fig-accent" stroke="currentColor" stroke-width="1">
+                <path d="M78 252v-22M466 252v-22" />
+                <path d="M78 241h388" />
+                <path d="M78 241l10-5v10zM466 241l-10-5v10z" fill="currentColor" stroke="none" />
               </g>
-              <g class="radar__blips" fill="#ff4d12">
-                <circle cx="222" cy="108" r="3.2" />
-                <circle cx="112" cy="206" r="2.4" opacity=".7" />
-                <circle cx="186" cy="238" r="2" opacity=".55" />
+              <g class="fig-text" fill="currentColor" font-size="11" letter-spacing="1.5">
+                <text x="78" y="278" opacity=".55">0.0</text>
+                <text x="428" y="278" opacity=".55">1.4 m</text>
+                <text x="504" y="190" opacity=".55" transform="rotate(-90 504 190)">ENDPLATE</text>
+                <text x="78" y="108" opacity=".55">WING / ENDPLATE</text>
               </g>
-              <g class="radar__plane" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".9">
-                <path d="M160 142l4.4 14.6 16.6 6.2v4.2l-16.6-2.4-2.2 12.4 6.2 5.2v3.4l-8.4-3-8.4 3v-3.4l6.2-5.2-2.2-12.4-16.6 2.4v-4.2l16.6-6.2z" />
+              <g class="fig-ghost" stroke="currentColor" stroke-width=".7" opacity=".22">
+                <path d="M78 116v210M40 196h560" stroke-dasharray="2 6" />
+                <circle cx="466" cy="216" r="48" stroke-dasharray="2 7" />
               </g>
-              <text x="160" y="10" text-anchor="middle" class="radar__label">N</text>
-              <text x="160" y="316" text-anchor="middle" class="radar__label">S</text>
-              <text x="6" y="164" class="radar__label">W</text>
-              <text x="298" y="164" class="radar__label">E</text>
             </svg>
           </div>
+          <figcaption><span class="figure__no">Fig. 3</span> Wing and endplate geometry from the dissertation. The dimension line runs to 1.4 m.</figcaption>
+        </figure>
+      </section>
 
-          <dl class="panel__readouts">
-            <div><dt>Local</dt><dd id="clock" data-clock>—:—</dd></div>
-            <div><dt>Base</dt><dd>Farnham, Surrey</dd></div>
-            <div><dt>Licence</dt><dd>GVC · CAA</dd></div>
-            <div><dt>Airframe</dt><dd>Glider · UAV</dd></div>
+      <!-- ============================ TOOLS ============================ -->
+      <section class="movement" id="tools" aria-labelledby="tools-h">
+        <div class="column">
+          <h2 id="tools-h">Tools</h2>
+          <p class="intro">The tools I use most, grouped by job.</p>
+          <dl class="tools">
+            <div>
+              <dt>Build</dt>
+              <dd>TypeScript, JavaScript, Python, React, Next.js, Node, Express, Tailwind, Vite</dd>
+            </div>
+            <div>
+              <dt>Map</dt>
+              <dd>Three.js, Leaflet, MapLibre, OpenStreetMap, Web Mercator, EXIF / GPS, Copernicus DEM, photogrammetry, LiDAR</dd>
+            </div>
+            <div>
+              <dt>Operate</dt>
+              <dd>Linux, Docker, Caddy, Proxmox, Tailscale, SQLite, Postgres, Drizzle, S3, Google Cloud, Gemini, OAuth, NextAuth, REST</dd>
+            </div>
+            <div>
+              <dt>Fly</dt>
+              <dd>GVC · CAA, mission planning, airspace and compliance, glider pilot, SolidWorks, AutoCAD, MATLAB, FEA / CFD, wind tunnel</dd>
+            </div>
           </dl>
-        </aside>
-      </div>
+        </div>
+      </section>
 
-      <div class="wrap hero__stats" aria-label="Key numbers">
-        <div class="stat">
-          <span class="stat__value" data-count="9" data-pad="2">09</span>
-          <span class="stat__label">Public repositories</span>
+      <!-- ============================ RECORD ============================ -->
+      <section class="movement" id="record" aria-labelledby="record-h">
+        <div class="column">
+          <h2 id="record-h">Record</h2>
+          <p class="intro">Jobs, the degree, and the flying.</p>
+          <ul class="record">
+            <li>
+              <span class="record__year">2025–</span>
+              <div>
+                <h3>Operations Manager, Survey Air</h3>
+                <p>Day-to-day delivery at a small drone survey company: flight operations, client communication, compliance, and the internal systems that connect them.</p>
+              </div>
+            </li>
+            <li>
+              <span class="record__year">2025–</span>
+              <div>
+                <h3>Independent software</h3>
+                <p>GeoMapper 3D, dashboard-v2 and a Discord daily puzzle, built outside work.</p>
+              </div>
+            </li>
+            <li>
+              <span class="record__year">2019</span>
+              <div>
+                <h3>BSc (Hons) Aerospace Engineering, Swansea University</h3>
+                <p>Upper second-class honours. Dissertation on Formula One wing endplates, tested in CFD and a wind tunnel.</p>
+              </div>
+            </li>
+            <li>
+              <span class="record__year">Ongoing</span>
+              <div>
+                <h3>Flight</h3>
+                <p>GVC remote pilot licence (CAA) and about 30 hours in civilian gliders. The best way to understand airspace is to be in it.</p>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="stat">
-          <span class="stat__value" data-count="30" data-suffix="k">30k</span>
-          <span class="stat__label">Photo points rendered in-browser</span>
-        </div>
-        <div class="stat">
-          <span class="stat__value" data-count="2.1" data-decimals="1">2.1</span>
-          <span class="stat__label">BSc (Hons) Aerospace Engineering</span>
-        </div>
-        <div class="stat">
-          <span class="stat__value" data-prefix="~" data-count="30" data-suffix="h">~30h</span>
-          <span class="stat__label">Glider time</span>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============================ MARQUEE ============================ -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Aerospace</span><i>✦</i><span>Software</span><i>✦</i><span>Geospatial</span><i>✦</i><span>UAV operations</span><i>✦</i><span>LiDAR</span><i>✦</i><span>AI agents</span><i>✦</i><span>Gliders</span><i>✦</i>
-        <span>Aerospace</span><i>✦</i><span>Software</span><i>✦</i><span>Geospatial</span><i>✦</i><span>UAV operations</span><i>✦</i><span>LiDAR</span><i>✦</i><span>AI agents</span><i>✦</i><span>Gliders</span><i>✦</i>
-      </div>
-    </div>
-
-    <!-- ============================ WORK ============================ -->
-    <section class="section work" id="work" aria-labelledby="work-h">
-      <div class="wrap section__head">
-        <div>
-          <p class="kicker"><span class="kicker__no">01</span> Selected work</p>
-          <h2 class="display" id="work-h">Things I've built<br /><em>and still run.</em></h2>
-        </div>
-        <div class="section__aside">
-          <p>Public projects, client systems and one dissertation. Drag the rail, or use the arrows.</p>
-          <div class="rail-controls">
-            <button class="rail-btn" type="button" id="rail-prev" aria-controls="work-track" aria-label="Previous projects">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6" /></svg>
-            </button>
-            <button class="rail-btn" type="button" id="rail-next" aria-controls="work-track" aria-label="Next projects">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </button>
+      <!-- ============================ NOW ============================ -->
+      <section class="movement" id="now" aria-labelledby="now-h">
+        <div class="column">
+          <h2 id="now-h">Now</h2>
+          <p class="dateline">November 2026</p>
+          <div class="now">
+            <p><em>Building.</em> The client portal and the automation around it. Uploads, permissions and storage lifecycle take the time. The landing page takes an afternoon.</p>
+            <p><em>Agents.</em> A skills library three coding agents read, and retros that turn sessions into better procedures. The aim is less supervision per change.</p>
+            <p><em>Flying.</em> GVC work in the week, gliders at the weekend when the weather allows. The CAA paperwork gets easier. The airspace software has not caught up.</p>
+            <p><em>Open to.</em> Operations roles where the person running the job also builds the tooling. AI, aviation and geospatial briefs welcome. Remote-friendly, UK-based.</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="rail-shell">
-        <div class="wrap">
-          <p class="rail-hint" aria-hidden="true">Scroll or drag <span>→</span></p>
-          <!--
-            To add a project: copy any <li class="work-card"> … </li> and edit it.
-            The rail measures itself, and the "N projects" label counts the cards automatically.
-          -->
-          <ol class="rail" id="work-track" tabindex="0" aria-label="Selected projects, horizontally scrollable">
-            <li class="work-card">
-              <div class="work-card__visual work-card__visual--shot">
-                <img src="./assets/geomapper-3d.png" alt="GeoMapper 3D showing geotagged photo markers hovering over an OpenStreetMap ground plane with 3D building masses" width="1400" height="900" loading="lazy" />
-                <span class="visual-badge">Open source</span>
-              </div>
-              <div class="work-card__body">
-                <p class="work-card__meta"><span class="work-card__no">01</span><span>Three.js · OSM · Copernicus DEM</span><span>2025—26</span></p>
-                <h3 class="work-card__title">GeoMapper 3D</h3>
-                <p class="work-card__text">Drop a ZIP of drone photos and see them plotted in real-world 3D — altitude as height, camera frustums for heading. It auto-falls back to a 2D coverage map past 2,000 photos, and renders 30,000 points in seconds.</p>
-                <a class="work-card__link" href="https://github.com/jemini-pro/3D_Georeference" rel="noopener">View project <svg class="ext-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg></a>
-              </div>
-            </li>
-
-            <li class="work-card">
-              <div class="work-card__visual">
-                <div class="mini-dash" aria-hidden="true">
-                  <div class="mini-dash__bar"><span>WORKBENCH</span><span class="mini-dash__live">● 4 ONLINE</span></div>
-                  <div class="mini-dash__tiles">
-                    <div><b>34<span>%</span></b><span>CPU</span></div>
-                    <div><b>61<span>%</span></b><span>MEM</span></div>
-                    <div><b>72<span>%</span></b><span>DISK</span></div>
-                  </div>
-                  <svg class="mini-dash__spark" viewBox="0 0 320 56" preserveAspectRatio="none">
-                    <polyline points="0,44 24,38 48,41 72,26 96,31 120,18 144,24 168,14 192,21 216,10 240,17 264,8 288,13 320,6" fill="none" stroke="#ff4d12" stroke-width="2" />
-                    <polyline points="0,44 24,38 48,41 72,26 96,31 120,18 144,24 168,14 192,21 216,10 240,17 264,8 288,13 320,6 320,56 0,56" fill="#ff4d12" opacity=".12" stroke="none" />
-                  </svg>
-                  <ul class="mini-dash__hosts">
-                    <li><span>pve-01</span><span class="ok">online</span></li>
-                    <li><span>lxc / dash</span><span class="ok">online</span></li>
-                    <li><span>win-desktop</span><span class="warn">warn</span></li>
-                  </ul>
-                </div>
-                <span class="visual-badge visual-badge--muted">UI sketch</span>
-              </div>
-              <div class="work-card__body">
-                <p class="work-card__meta"><span class="work-card__no">02</span><span>Python · SQLite · Caddy</span><span>2026</span></p>
-                <h3 class="work-card__title">dashboard-v2</h3>
-                <p class="work-card__text">A self-hosted command centre for the whole home lab. Stdlib-only Python API, SQLite metrics history, deploy-and-rollback scripts, and agents for Linux, macOS, Windows, Proxmox and Docker that push every 60 seconds.</p>
-                <a class="work-card__link" href="https://github.com/jemini-pro/dashboard-v2" rel="noopener">View project <svg class="ext-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg></a>
-              </div>
-            </li>
-
-            <li class="work-card">
-              <div class="work-card__visual work-card__visual--puzzle">
-                <div class="mini-puzzle" aria-hidden="true">
-                  <div class="mini-puzzle__top"><span>DAILY / 105</span><span>BAND 3</span></div>
-                  <div class="mini-puzzle__digits"><span>4</span><span>2</span><span>8</span></div>
-                  <div class="mini-puzzle__row"><span class="mini-puzzle__pill">Guess 2 / 3</span><span class="mini-puzzle__temp">warmer</span></div>
-                  <div class="mini-puzzle__bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                  <p class="mini-puzzle__foot">seeded by date · same puzzle for every guild</p>
-                </div>
-              </div>
-              <div class="work-card__body">
-                <p class="work-card__meta"><span class="work-card__no">03</span><span>TypeScript · Express · Vitest</span><span>2026</span></p>
-                <h3 class="work-card__title">Discord Math Game</h3>
-                <p class="work-card__text">A daily puzzle activity for Discord servers. Deterministic date-seeded puzzles, a five-band difficulty ramp, warm-cold feedback, streaks and per-guild leaderboards — with the engine isolated behind a tested seam.</p>
-                <a class="work-card__link" href="https://github.com/jemini-pro/discord-activity" rel="noopener">View project <svg class="ext-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg></a>
-              </div>
-            </li>
-
-            <li class="work-card">
-              <div class="work-card__visual work-card__visual--figure">
-                <svg class="f1-figure" viewBox="0 0 480 300" role="img" aria-label="Technical drawing of a wing and endplate with dimension lines">
-                  <g fill="none" stroke="currentColor" stroke-width="1.2">
-                    <path d="M58 168c38-22 96-34 178-32 46 1 82 9 108 22" opacity=".8" />
-                    <path d="M58 168c42 14 104 22 180 20 44-1 80-6 106-14" opacity=".8" />
-                    <path d="M344 106h22c6 0 10 5 10 11v58c0 6-4 11-10 11h-22" />
-                    <path d="M344 106v80" opacity=".35" />
-                    <path d="M58 168h-14M58 168h14M344 186h-14M344 186h14" opacity=".0" />
-                  </g>
-                  <g stroke="#ff4d12" stroke-width="1" opacity=".9">
-                    <path d="M58 214v-18M344 214v-18" />
-                    <path d="M58 205h286" />
-                    <path d="M58 205l8-4v8zM344 205l-8-4v8z" fill="#ff4d12" stroke="none" />
-                  </g>
-                  <g fill="currentColor" font-size="10" letter-spacing="1.2">
-                    <text x="58" y="238" opacity=".55">0.0</text>
-                    <text x="316" y="238" opacity=".55">1.4 m</text>
-                    <text x="356" y="150" opacity=".55" transform="rotate(-90 356 150)">ENDPLATE</text>
-                    <text x="58" y="86" opacity=".55">FIG. 01 — WING / ENDPLATE</text>
-                  </g>
-                  <g stroke="currentColor" stroke-width=".7" opacity=".22">
-                    <path d="M58 96v192M24 168h432" stroke-dasharray="2 5" />
-                    <circle cx="344" cy="186" r="42" stroke-dasharray="2 6" />
-                  </g>
-                </svg>
-              </div>
-              <div class="work-card__body">
-                <p class="work-card__meta"><span class="work-card__no">04</span><span>CFD · Wind tunnel · FIA regs</span><span>2019</span></p>
-                <h3 class="work-card__title">F1 wing endplates</h3>
-                <p class="work-card__text">Self-defined undergraduate dissertation: two endplate specifications designed against Formula One regulations, then compared through computational and wind-tunnel analysis. Available on request.</p>
-                <span class="work-card__link work-card__link--static">Dissertation · Swansea University</span>
-              </div>
-            </li>
-
-            <li class="work-card">
-              <div class="work-card__visual work-card__visual--portal">
-                <div class="mini-portal" aria-hidden="true">
-                  <div class="mini-portal__bar"><span>PORTAL / PROJECTS</span><span>SSO · 3 ROLES</span></div>
-                  <ul class="mini-portal__list">
-                    <li><span class="mini-portal__dot"></span><span>Orthomosaic set</span><span class="mini-portal__state">Standard</span></li>
-                    <li><span class="mini-portal__dot"></span><span>Point cloud</span><span class="mini-portal__state">IA</span></li>
-                    <li><span class="mini-portal__dot"></span><span>Inspection set</span><span class="mini-portal__state">Glacier</span></li>
-                  </ul>
-                  <div class="mini-portal__upload">
-                    <span>UPLOAD → S3</span>
-                    <span class="mini-portal__meter"><i></i></span>
-                    <span>100%</span>
-                  </div>
-                </div>
-              </div>
-              <div class="work-card__body">
-                <p class="work-card__meta"><span class="work-card__no">05</span><span>Survey Air · client portal</span><span>2026</span></p>
-                <h3 class="work-card__title">Client portal</h3>
-                <p class="work-card__text">A Next.js portal replacing a WordPress and FTP delivery flow. Google SSO, role-based project access, browser-to-S3 multipart uploads, and scheduled storage moves from Standard to IA to Glacier. The app server never touches file data.</p>
-                <span class="work-card__link work-card__link--static">Private · employed work</span>
-              </div>
-            </li>
-
-            <li class="work-card">
-              <div class="work-card__visual">
-                <svg class="survey-figure" viewBox="0 0 480 300" role="img" aria-label="Abstract point cloud and flight path over contour lines">
-                  <g fill="none" stroke="currentColor" opacity=".18">
-                    <path d="M-20 240C60 200 120 230 190 196s130-70 310-44" />
-                    <path d="M-20 262C70 218 130 246 200 214s130-68 310-40" />
-                    <path d="M-20 218C50 180 110 212 180 176s130-68 320-42" />
-                    <path d="M-20 196C40 160 100 192 170 156s130-66 330-42" />
-                    <path d="M40 300c10-70 40-120 96-150" opacity=".5" />
-                    <path d="M120 300c0-60 26-110 76-140" opacity=".5" />
-                  </g>
-                  <path class="survey-path" d="M46 250c40-56 86-70 132-52 46 18 58 74 112 58 54-16 66-96 132-92" fill="none" stroke="#ff4d12" stroke-width="1.6" stroke-dasharray="4 5" />
-                  <g fill="#ff4d12">
-                    <circle cx="46" cy="250" r="3" /><circle cx="178" cy="198" r="3" /><circle cx="290" cy="256" r="3" /><circle cx="422" cy="164" r="3" />
-                  </g>
-                  <g fill="currentColor" opacity=".55">
-                    <circle cx="70" cy="118" r="1.4" /><circle cx="96" cy="140" r="1.4" /><circle cx="128" cy="112" r="1.4" /><circle cx="154" cy="150" r="1.4" /><circle cx="188" cy="120" r="1.4" /><circle cx="214" cy="146" r="1.4" /><circle cx="246" cy="118" r="1.4" /><circle cx="278" cy="142" r="1.4" /><circle cx="310" cy="114" r="1.4" /><circle cx="342" cy="138" r="1.4" /><circle cx="374" cy="110" r="1.4" /><circle cx="406" cy="132" r="1.4" />
-                    <circle cx="88" cy="170" r="1.4" /><circle cx="120" cy="172" r="1.4" /><circle cx="152" cy="174" r="1.4" /><circle cx="184" cy="172" r="1.4" /><circle cx="216" cy="170" r="1.4" /><circle cx="248" cy="172" r="1.4" /><circle cx="280" cy="174" r="1.4" /><circle cx="312" cy="170" r="1.4" /><circle cx="344" cy="172" r="1.4" /><circle cx="376" cy="170" r="1.4" />
-                  </g>
-                  <g fill="currentColor" font-size="9.5" letter-spacing="1.4" opacity=".6">
-                    <text x="46" y="278">WP 01</text>
-                    <text x="382" y="140">GCP 04</text>
-                    <text x="300" y="40">SURVEY AREA / 12.4 ha</text>
-                  </g>
-                  <g stroke="currentColor" opacity=".3">
-                    <path d="M300 50h120M300 50v10M420 50v10" fill="none" />
-                  </g>
-                </svg>
-              </div>
-              <div class="work-card__body">
-                <p class="work-card__meta"><span class="work-card__no">06</span><span>Photogrammetry · LiDAR · Automation</span><span>2025—now</span></p>
-                <h3 class="work-card__title">Survey Air tooling</h3>
-                <p class="work-card__text">The machinery behind the deliverables at a small drone survey company: batch scripts for photogrammetry and LiDAR, a DNG to JPEG pipeline, a CLIP image sorter and a volume calculator for point clouds. Each one took a manual step out of the week.</p>
-                <span class="work-card__link work-card__link--static">Private · employed work</span>
-              </div>
-            </li>
-
-            <li class="work-card">
-              <div class="work-card__visual work-card__visual--skills">
-                <div class="mini-skills" aria-hidden="true">
-                  <div class="mini-skills__bar"><span>SKILLS / CORE</span><span>3 HARNESSES</span></div>
-                  <ul class="mini-skills__tree">
-                    <li><span>review/</span><em>shared</em></li>
-                    <li><span>tdd/</span><em>shared</em></li>
-                    <li><span>diagnose/</span><em>shared</em></li>
-                  </ul>
-                  <div class="mini-skills__targets"><span>Claude Code</span><span>Codex</span><span>Hermes</span></div>
-                  <p class="mini-skills__foot">projection · shell-tested</p>
-                </div>
-              </div>
-              <div class="work-card__body">
-                <p class="work-card__meta"><span class="work-card__no">07</span><span>Agent tooling · Markdown</span><span>2026</span></p>
-                <h3 class="work-card__title">Skills library</h3>
-                <p class="work-card__text">One set of procedures shared by three coding agents. Each skill keeps a shared core plus per-harness frontmatter, and a projection script installs them into Claude Code, Codex and Hermes. Shell tests gate the projection.</p>
-                <span class="work-card__link work-card__link--static">Private · not public</span>
-              </div>
-            </li>
-
-            <li class="work-card work-card--more">
-              <a class="work-card__more-link" href="https://github.com/jemini-pro?tab=repositories" rel="noopener">
-                <span class="work-card__more-kicker">The rest</span>
-                <span class="work-card__more-count" id="repo-count">9</span>
-                <span class="work-card__more-label">public repositories<br />and counting</span>
-                <span class="work-card__more-arrow" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                </span>
-              </a>
-            </li>
-          </ol>
-
-          <div class="rail-progress" aria-hidden="true"><span id="rail-progress-bar"></span></div>
+      <!-- ============================ CONTACT ============================ -->
+      <section class="movement contact" id="contact" aria-labelledby="contact-h">
+        <div class="column">
+          <h2 id="contact-h">Contact</h2>
+          <p class="contact__lead">Email is the best way to reach me.</p>
+          <a class="contact__email" href="mailto:jkaraceylan@gmail.com">jkaraceylan@gmail.com</a>
+          <p class="contact__details"><a href="tel:+447745795585">07745 795 585</a> · <a href="https://github.com/jemini-pro" rel="me noopener">github.com/jemini-pro</a> · Farnham, Surrey · Open to remote</p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============================ STACK ============================ -->
-    <section class="section stack" id="stack" aria-labelledby="stack-h">
-      <div class="wrap section__head">
-        <div>
-          <p class="kicker"><span class="kicker__no">02</span> Stack</p>
-          <h2 class="display" id="stack-h">What I reach<br /><em>for first.</em></h2>
-        </div>
-        <div class="section__aside">
-          <p>Not a wall of logos — four groups, and the reason each one exists in my work.</p>
-        </div>
-      </div>
-
-      <div class="wrap stack__grid">
-        <article class="stack__group">
-          <div class="stack__head"><span class="stack__no">A</span><h3>Build</h3></div>
-          <p class="stack__note">Internal tools, side projects and anything with a UI.</p>
-          <ul class="chips">
-            <li>TypeScript</li><li>JavaScript</li><li>Python</li><li>React</li><li>Next.js</li><li>Tailwind</li><li>Vite</li><li>Node</li><li>Express</li>
-          </ul>
-        </article>
-
-        <article class="stack__group">
-          <div class="stack__head"><span class="stack__no">B</span><h3>Map &amp; model</h3></div>
-          <p class="stack__note">Turning coordinates into something you can actually look at.</p>
-          <ul class="chips">
-            <li>Three.js</li><li>Leaflet</li><li>MapLibre</li><li>OpenStreetMap</li><li>Web Mercator</li><li>EXIF / GPS</li><li>Copernicus DEM</li><li>Photogrammetry</li><li>LiDAR</li>
-          </ul>
-        </article>
-
-        <article class="stack__group">
-          <div class="stack__head"><span class="stack__no">C</span><h3>Operate</h3></div>
-          <p class="stack__note">The unglamorous layer that decides whether anything ships.</p>
-          <ul class="chips">
-            <li>Linux</li><li>Docker</li><li>Caddy</li><li>Proxmox</li><li>Tailscale</li><li>SQLite</li><li>Postgres</li><li>Drizzle</li><li>S3</li><li>Google Cloud</li><li>Gemini</li><li>OAuth</li><li>NextAuth</li><li>REST</li>
-          </ul>
-        </article>
-
-        <article class="stack__group">
-          <div class="stack__head"><span class="stack__no">D</span><h3>Fly &amp; analyse</h3></div>
-          <p class="stack__note">From the degree, the licence and the day job.</p>
-          <ul class="chips">
-            <li>GVC · CAA</li><li>Mission planning</li><li>Airspace &amp; compliance</li><li>Glider pilot</li><li>SolidWorks</li><li>AutoCAD</li><li>MATLAB</li><li>FEA / CFD</li><li>Wind tunnel</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============================ TIMELINE ============================ -->
-    <section class="section timeline" id="timeline" aria-labelledby="timeline-h">
-      <div class="wrap section__head">
-        <div>
-          <p class="kicker"><span class="kicker__no">03</span> Track record</p>
-          <h2 class="display" id="timeline-h">Short, but<br /><em>varied.</em></h2>
-        </div>
-        <div class="section__aside">
-          <p>The current role, the degree, and a lot of self-directed building in between.</p>
-        </div>
-      </div>
-
-      <div class="wrap">
-        <ol class="timeline__list">
-          <li class="timeline__item">
-            <span class="timeline__year">2025 — now</span>
-            <div class="timeline__body">
-              <h3>Operations Manager <span>·</span> Survey Air</h3>
-              <p>Run day-to-day delivery at a small drone survey company: flight operations, client communication, compliance, and the internal systems that connect them.</p>
-            </div>
-            <span class="timeline__tag">Current</span>
-          </li>
-          <li class="timeline__item">
-            <span class="timeline__year">2025 — now</span>
-            <div class="timeline__body">
-              <h3>Independent software <span>·</span> Public repos</h3>
-              <p>GeoMapper 3D, dashboard-v2 and a Discord daily puzzle. Built to solve real problems, learn the tools properly, and keep the engineering sharp outside work.</p>
-            </div>
-            <span class="timeline__tag">Ongoing</span>
-          </li>
-          <li class="timeline__item">
-            <span class="timeline__year">2019</span>
-            <div class="timeline__body">
-              <h3>BSc (Hons) Aerospace Engineering <span>·</span> Swansea University</h3>
-              <p>Upper second-class honours (2.1). Dissertation: two Formula One wing-endplate specifications designed against FIA regulations and compared through CFD and wind-tunnel testing.</p>
-            </div>
-            <span class="timeline__tag">2.1</span>
-          </li>
-          <li class="timeline__item">
-            <span class="timeline__year">Ongoing</span>
-            <div class="timeline__body">
-              <h3>Flight <span>·</span> UAV and glider</h3>
-              <p>GVC remote pilot licence (CAA) for commercial drone operations, plus around 30 hours in civilian gliders. The best way to understand airspace is to be in it.</p>
-            </div>
-            <span class="timeline__tag">Airborne</span>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============================ NOW ============================ -->
-    <section class="section now" id="now" aria-labelledby="now-h">
-      <div class="wrap section__head">
-        <div>
-          <p class="kicker"><span class="kicker__no">04</span> Now <span class="kicker__date">Updated Nov 2026</span></p>
-          <h2 class="display" id="now-h">What I'm<br /><em>paying attention to.</em></h2>
-        </div>
-        <div class="section__aside">
-          <p>Kept short on purpose. If it's here, it's current.</p>
-        </div>
-      </div>
-
-      <div class="wrap">
-        <ul class="now__list">
-          <li class="now__item">
-            <span class="now__label">Building</span>
-            <p class="now__text">A client portal for survey delivery, and the automation around it. Uploads, permissions and storage lifecycle take the time. The landing page takes an afternoon.</p>
-          </li>
-          <li class="now__item">
-            <span class="now__label">Agents</span>
-            <p class="now__text">A skills library three coding agents read, and retros that turn real sessions into better procedures. The aim is less supervision per change, not more.</p>
-          </li>
-          <li class="now__item">
-            <span class="now__label">Flying</span>
-            <p class="now__text">GVC drone work in the week, gliders at the weekend when the weather allows. The CAA paperwork gets easier. The airspace software has not caught up.</p>
-          </li>
-          <li class="now__item">
-            <span class="now__label">Open to</span>
-            <p class="now__text">Operations roles where the person running the job also builds the tooling. AI, aviation and geospatial briefs welcome. Remote-friendly, UK-based.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============================ CONTACT ============================ -->
-    <section class="section contact" id="contact" aria-labelledby="contact-h">
-      <div class="wrap">
-        <p class="kicker kicker--light"><span class="kicker__no">05</span> Contact</p>
-        <h2 class="contact__title" id="contact-h">Have something<br /><em>in mind?</em></h2>
-        <a class="contact__email" href="mailto:jkaraceylan@gmail.com">jkaraceylan@gmail.com</a>
-
-        <div class="contact__foot">
-          <ul class="contact__list">
-            <li><span>Phone</span><a href="tel:+447745795585">07745 795 585</a></li>
-            <li><span>GitHub</span><a href="https://github.com/jemini-pro" rel="me noopener">github.com/jemini-pro</a></li>
-            <li><span>Location</span><span>Farnham, Surrey</span></li>
-            <li><span>Availability</span><span>Open to remote</span></li>
-          </ul>
-          <p class="contact__note">No recruiter forms. Just email.</p>
-        </div>
-      </div>
-    </section>
-
+    </article>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap site-footer__inner">
+    <div class="page site-footer__inner">
       <p>© <span id="year">2026</span> Jem Karaceylan</p>
-      <p class="site-footer__meta"><span id="local-time">Farnham</span> · Static site · No framework · No build step</p>
-      <a class="site-footer__top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
