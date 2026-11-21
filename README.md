@@ -1,11 +1,9 @@
 # Jem Karaceylan — about-me
 
-Personal site for **Jem Karaceylan** — Operations Manager at Survey Air, a drone survey company, and an aerospace engineer and software builder. Static, dependency-free, deployed on GitHub Pages.
+Personal site for **Jem Karaceylan** — Operations Manager at Survey Air, a drone survey company in Surrey, and an aerospace engineer and software builder. Static, dependency-free, deployed on GitHub Pages.
 
 **Live:** https://jemini-pro.github.io/about-me/
 **Repo:** https://github.com/jemini-pro/about-me
-
-> The GitHub account was renamed from `jem-cell` to `jemini-pro`. Every URL in the site, sitemap, robots file and README was moved to the new name — the old `jem-cell.github.io` address now 404s.
 
 ---
 
@@ -14,8 +12,8 @@ Personal site for **Jem Karaceylan** — Operations Manager at Survey Air, a dro
 ```
 about-me/
 ├── index.html              # single page, all content
-├── styles.css              # design tokens, layout, light + dark
-├── script.js               # theme, rail, counters, reveals (no deps)
+├── styles.css              # tokens, type, one-column layout, light + dark
+├── script.js               # theme toggle and footer year (no deps)
 ├── assets/
 │   └── geomapper-3d.png    # real GeoMapper 3D screenshot
 ├── og.png                  # 1200×630 social preview
@@ -27,7 +25,7 @@ about-me/
 └── README.md
 ```
 
-No build step. No `node_modules`. No framework. Three files of actual content.
+No build step. No `node_modules`. No framework.
 
 ---
 
@@ -52,84 +50,46 @@ No custom domain. `.nojekyll` keeps Pages from running the files through Jekyll.
 
 ---
 
-## Design direction: kinetic editorial
+## Design direction: subtractive editorial
 
-The previous version was a restrained editorial layout — clean, but quiet. This rebuild keeps the editorial discipline and adds motion, scale and a technical vocabulary that matches the work itself.
+The previous build was a kinetic editorial page: numbered section kickers, a marquee, a radar panel, a four-stat strip, seven project cards, scroll reveals and counters. It looked art-directed, but it also looked assembled. Every section had the same shape, and the decoration was doing the work the writing should do.
 
-### Typography
+This version is one column, two typefaces and three figures. It reads like an essay rather than a landing page.
 
-| Role | Face | Why |
-|---|---|---|
-| Display | **Instrument Serif** (roman + italic) | High-contrast, characterful at 100px+, and the italic has real energy. Carries the giant name and every section title. |
-| Body | **Space Grotesk** | Neutral but not generic; the same family already used in `dashboard-v2`, so the site and the work share a voice. |
-| Data | **JetBrains Mono** | Kickers, metadata, tags, chips, readouts. Keeps technical detail in its own register. |
+### What was cut
 
-No Inter. No single-font default. Three considered families with distinct jobs.
+- The five identical section openers (numbered kicker, two-line display heading, italic orange payoff, 34ch aside).
+- The marquee, role rotator, radar panel, green "Available" dot and the four-stat brag strip.
+- Project cards, chip walls, rail controls, progress bars and drag-scroll behaviour.
+- Scroll reveals on every element, counters, the live clock and the sticky blurred header.
+- Copy that explained its own design ("Not a wall of logos…", "Kept short on purpose…").
 
-### Colour
+### What replaced it
 
-A warm paper base (`#f3f0e8`), near-black ink (`#111110`), and one signal colour — an orange-red (`#ff4d12`) used for movement, emphasis and the instrument panel. Light and dark are both first-class:
+- **A masthead, a title block and prose.** The page opens with a dateline, the name, and a standfirst, then goes straight into the work.
+- **Work as an annotated list.** Each project is a heading, a small meta line and one paragraph. Public projects get a repo link. Private work is labelled private.
+- **Three figures, each doing a job.**
+  - **Fig. 1** — the client portal upload path, drawn as a responsive HTML flow: browser to S3, app server signing presigned URLs, lifecycle to IA and Glacier.
+  - **Fig. 2** — the real GeoMapper 3D screenshot.
+  - **Fig. 3** — the dissertation's wing and endplate drawing, redrawn as an inline SVG.
+- **Tools as a definition list and Record as a plain two-column list.** No chips, no timeline tags, no hover backgrounds.
+- **Now as four short paragraphs** with run-in italic labels.
+- **Contact as text.** A large email link, phone, location, and nothing else.
 
-- Dark mode is a true dark, not an inverted grey.
-- The contact section deliberately inverts: dark in light mode, light in dark mode. It closes the page with a hard tonal shift.
-- A very light SVG grain sits over the page so the paper never reads as a flat hex.
+### Type and colour
+
+| Role | Face |
+|---|---|
+| Display | **Instrument Serif** (roman + italic) |
+| Body, labels, captions | **Space Grotesk** |
+
+Two families, not three. JetBrains Mono was removed: the mono labels were half the "technical template" voice.
+
+Paper (`#f3f0e8`), ink (`#141412`), and one rust accent (`#a83a14`) used for links and figure numbers. Dark mode is a true dark (`#0d0d0b`), not an inverted grey. No grain overlay.
 
 ### Motion
 
-All motion is CSS-first and respects `prefers-reduced-motion`:
-
-- **Role rotator** in the hero cycles Operations Manager → Aerospace Engineer → Software Engineer → Geospatial Builder.
-- **Radar sweep** and drifting aircraft in the instrument panel.
-- **Marquee** of disciplines, paused on hover.
-- **Scroll reveals** via one `IntersectionObserver` (no scroll listeners for layout).
-- **Counters** count up once, in-view.
-- **Top progress bar** and horizontal **rail progress**.
-- **Active nav** follows the section in view.
-
-Reduced-motion users get static final states, not a broken page.
-
-### Components built for the page
-
-- **Instrument panel** — an inline-SVG radar with bearings, sweep, blips, aircraft, live Farnham clock and readouts.
-- **Horizontal work rail** — native scroll-snap, drag with a mouse, arrow buttons, keyboard scrolling, a progress bar, and a "more on GitHub" end card. Cards reveal as they enter the horizontal viewport.
-- **Project visuals** — a real GeoMapper screenshot, plus hand-built CSS/SVG previews for `dashboard-v2` (workbench mock), the Discord game (split-flap puzzle), the F1 dissertation (technical drawing), the Survey Air client portal (delivery flow) and the skills library (projection tree).
-- **Theme toggle** — light/dark, persisted in `localStorage`, no flash of the wrong theme (an inline head script sets it before first paint).
-
----
-
-## Content audit — what changed and why
-
-This rebuild was driven by an audit against the live repos, not just a restyle.
-
-### Fixed
-
-- **Every GitHub link was dead.** The account was renamed `jem-cell` → `jemini-pro`. The profile link 404'd; repo links only worked through redirects. All URLs now point at `jemini-pro`.
-- **The live URL moved.** `jem-cell.github.io/about-me/` is 404; the canonical, OG URL, sitemap and robots now use `jemini-pro.github.io/about-me/`.
-- **`Health-app` was removed.** The repo is gone (404, no redirect). It is no longer presented as public work.
-- **"Now" was six months stale.** Rewritten and dated **November 2026**.
-- **`sitemap.xml` lastmod** updated to 2026-11-21.
-- **The old README documented a brief that no longer applied** (banned gradients, etc.). Replaced with the actual design rationale.
-
-### Understated work, now described accurately
-
-- **`3D_Georeference` is now GeoMapper 3D** — 3D/2D auto-switching, 30,000+ photo coverage maps, OSM building masses, Copernicus DEM terrain, ADRs and CI. The old one-liner ("a browser tool for placing point clouds") sold it short.
-- **`dashboard-v2` is now a full command centre** — stdlib-only Python API, SQLite metrics history, Caddy deploy with rollback, and agents for Linux, macOS, Windows, Proxmox and Docker. It was previously mentioned only as a footnote.
-- **`discord-activity`** — a TypeScript daily math game with deterministic date-seeded puzzles, difficulty bands, streaks and per-guild leaderboards — is now featured.
-- **`route-planning`** is still public, but the stronger current work leads the rail.
-- **The client portal and skills library** — the two current private systems — now have their own cards, drawn as schematic previews rather than screenshots.
-- **Degree** — corrected to **BSc (Hons)**, confirmed by the subject.
-- **Redactions held** — no exact coordinates, headcount beyond "small company", client names, site locations or licence numbers.
-
-### Verified content sources
-
-- **GitHub** — `https://github.com/jemini-pro` (the renamed `jem-cell` account; repos 301-redirect from the old name).
-  - `3D_Georeference` (GeoMapper 3D), `dashboard-v2`, `discord-activity`, `georeference`, `route-planning`, `t3code`, `padel-up`, `Uber-clone`, `about-me`.
-- **Private work** — the Survey Air client portal and tooling, and the skills library, are described but not linked.
-- **CV** — BSc (Hons) Aerospace Engineering, 2.1, Swansea University (2019); F1 wing-endplate aerodynamics dissertation; GVC drone licence (CAA); ~30 hours glider time.
-- **Survey Air** — Operations Manager, 2025–present, small drone survey company.
-- **Contact** — `jkaraceylan@gmail.com`, `07745 795 585`, Farnham, Surrey.
-
-Nothing on the page is invented: no fabricated employers, testimonials, metrics or headshots. The one stylised element is the `dashboard-v2` card, which is explicitly badged **UI sketch**; the GeoMapper card uses a real screenshot and is badged **Open source**.
+There is almost none. Links and the theme toggle have short colour transitions. Nothing moves on scroll. `prefers-reduced-motion` still zeroes the remaining transitions.
 
 ---
 
@@ -137,33 +97,61 @@ Nothing on the page is invented: no fabricated employers, testimonials, metrics 
 
 ### Add a project
 
-Copy any `<li class="work-card"> … </li>` inside `#work-track` in `index.html` and edit it. Nothing else needs changing: the rail measures itself and the "more on GitHub" count is independent. The HTML comment above the list marks the spot.
-
-Each card follows this shape:
+Copy any `<article class="entry"> … </article>` inside `#work` and edit it. Public projects get an `.entry-link` line; private ones do not.
 
 ```html
-<li class="work-card">
-  <div class="work-card__visual">…</div>
-  <div class="work-card__body">
-    <p class="work-card__meta"><span class="work-card__no">06</span><span>Stack</span><span>2026</span></p>
-    <h3 class="work-card__title">Project name</h3>
-    <p class="work-card__text">What it is and why it exists.</p>
-    <a class="work-card__link" href="https://…" rel="noopener">View project <svg class="ext-arrow" …></svg></a>
+<article class="entry">
+  <div class="entry__head">
+    <h3>Project name</h3>
+    <p class="entry-meta">2026 · open source</p>
   </div>
-</li>
+  <p>What it is and why it exists.</p>
+  <p class="entry-link"><a href="https://…" rel="noopener">github.com/…</a></p>
+</article>
 ```
+
+### Add a figure
+
+Copy a `<figure class="figure"> … </figure>`. Figure numbers are written by hand in the caption, so renumber the ones after it if you insert in the middle.
+
+```html
+<figure class="figure">
+  <div class="figure__frame">
+    <img src="./assets/name.png" alt="…" width="1400" height="900" loading="lazy" />
+  </div>
+  <figcaption><span class="figure__no">Fig. 4</span> Caption.</figcaption>
+</figure>
+```
+
+Use `.figure--diagram` for a frameless flow (like Fig. 1) and `.figure--drawing` for technical drawings.
 
 ### Update the "Now" section
 
-Edit the four items in `#now` and the `Updated Nov 2026` label in its kicker. Keep it short — the page says so.
-
-### Update the numbers
-
-The four hero stats live in `.hero__stats`, each as `data-count`, `data-prefix`, `data-suffix`, `data-decimals` or `data-pad`. Change the attributes and the visible fallback text together; the animation reads the attributes.
+Edit the four paragraphs in `#now` and the `November 2026` dateline above them.
 
 ### Re-render the social image
 
 `og-source.html` is a 600×315 page designed to be captured at 2× and saved as `og.png` (1200×630). Open it at 600×315 in a browser, screenshot the viewport, and save over `og.png`.
+
+The checked-in `og.png` still shows the previous design. Re-render it from `og-source.html` before publishing so link previews match the page.
+
+---
+
+## Content audit
+
+The content was rebuilt against the live repos, not just restyled.
+
+- **GitHub links** point at `jemini-pro`, the renamed account (previously `jem-cell`). Repo links 301-redirect from the old name.
+- **`Health-app` was removed** — the repo is gone.
+- **GeoMapper 3D** (`3D_Georeference`) is described from the repo: 3D/2D switching, 30,000+ photo coverage maps, OSM building masses, Copernicus DEM terrain, ADRs and CI.
+- **dashboard-v2** is the full command centre: stdlib-only Python API, SQLite metrics history, Caddy deploy with rollback, agents for Linux, macOS, Windows, Proxmox and Docker.
+- **discord-activity** is a TypeScript daily math game with date-seeded puzzles, five difficulty bands, streaks and per-guild leaderboards.
+- **The client portal and skills library** are private systems, described but not linked.
+- **Degree:** BSc (Hons) Aerospace Engineering, Swansea University, 2019, 2.1. Dissertation on Formula One wing endplates.
+- **Licence:** GVC remote pilot (CAA), around 30 hours in civilian gliders.
+- **Redactions held:** no exact coordinates, headcount beyond "small company", client names, site locations or licence numbers.
+
+Nothing on the page is invented. The GeoMapper figure uses a real screenshot; the portal diagram and F1 drawing are schematic, and captioned as such.
 
 ---
 
@@ -171,19 +159,17 @@ The four hero stats live in `.hero__stats`, each as `data-count`, `data-prefix`,
 
 - Skip link; semantic landmarks; every section has an `aria-labelledby`.
 - Visible `:focus-visible` rings, never removed.
-- The decorative radar and marquee are `aria-hidden`; the rotator has a static screen-reader equivalent.
-- The rail is a labelled, keyboard-scrollable region with buttons.
-- `prefers-reduced-motion: reduce` disables the rotator, marquee, radar, reveals and counters, and shows final values immediately.
-- Colour: body text is ~12:1 on paper; the signal colour is used for large text and graphics. Dark mode is tuned separately rather than inverted.
-- External links carry `rel="noopener"`; the GitHub profile uses `rel="me noopener"`.
+- Figures with SVG use `role="img"` and an `aria-label`; the screenshot has alt text.
+- The theme toggle is a real button with `aria-pressed` and a state-dependent label.
+- Light and dark are both first-class; body text is ~12:1 on paper.
+- `prefers-reduced-motion` removes the remaining transitions.
 
 ## Performance
 
-- One CSS file, one ~200-line JS file, no dependencies, no build.
-- One raster image on the page (`assets/geomapper-3d.png`, lazy-loaded); the rest of the visuals are CSS and inline SVG.
-- Motion uses `IntersectionObserver` and `requestAnimationFrame`; no layout-thrashing scroll handlers.
-- Fonts use `preconnect`; three families with only the weights used.
-- No horizontal overflow at 360, 390, 768, 1280 or 1440px.
+- One CSS file, one ~35-line JS file, no dependencies, no build.
+- One raster image on the page (`assets/geomapper-3d.png`, lazy-loaded); Fig. 1 is an HTML flow and Fig. 3 is inline SVG.
+- Two font families with only the weights used.
+- No scroll listeners, no observers, no animation frames.
 
 ---
 
