@@ -1,6 +1,6 @@
 # Jem Karaceylan — about-me
 
-Personal site for **Jem Karaceylan** — Operations Manager at [Survey Air](https://github.com/jemini-pro), a drone survey startup, and an aerospace engineer and software builder. Static, dependency-free, deployed on GitHub Pages.
+Personal site for **Jem Karaceylan** — Operations Manager at Survey Air, a drone survey company, and an aerospace engineer and software builder. Static, dependency-free, deployed on GitHub Pages.
 
 **Live:** https://jemini-pro.github.io/about-me/
 **Repo:** https://github.com/jemini-pro/about-me
@@ -92,7 +92,7 @@ Reduced-motion users get static final states, not a broken page.
 
 - **Instrument panel** — an inline-SVG radar with bearings, sweep, blips, aircraft, live Farnham clock and readouts.
 - **Horizontal work rail** — native scroll-snap, drag with a mouse, arrow buttons, keyboard scrolling, a progress bar, and a "more on GitHub" end card. Cards reveal as they enter the horizontal viewport.
-- **Project visuals** — a real GeoMapper screenshot, plus hand-built CSS/SVG previews for `dashboard-v2` (workbench mock), the Discord game (split-flap puzzle) and the F1 dissertation (technical drawing).
+- **Project visuals** — a real GeoMapper screenshot, plus hand-built CSS/SVG previews for `dashboard-v2` (workbench mock), the Discord game (split-flap puzzle), the F1 dissertation (technical drawing), the Survey Air client portal (delivery flow) and the skills library (projection tree).
 - **Theme toggle** — light/dark, persisted in `localStorage`, no flash of the wrong theme (an inline head script sets it before first paint).
 
 ---
@@ -116,13 +116,17 @@ This rebuild was driven by an audit against the live repos, not just a restyle.
 - **`dashboard-v2` is now a full command centre** — stdlib-only Python API, SQLite metrics history, Caddy deploy with rollback, and agents for Linux, macOS, Windows, Proxmox and Docker. It was previously mentioned only as a footnote.
 - **`discord-activity`** — a TypeScript daily math game with deterministic date-seeded puzzles, difficulty bands, streaks and per-guild leaderboards — is now featured.
 - **`route-planning`** is still public, but the stronger current work leads the rail.
+- **The client portal and skills library** — the two current private systems — now have their own cards, drawn as schematic previews rather than screenshots.
+- **Degree** — corrected to **BSc (Hons)**, confirmed by the subject.
+- **Redactions held** — no exact coordinates, headcount beyond "small company", client names, site locations or licence numbers.
 
 ### Verified content sources
 
 - **GitHub** — `https://github.com/jemini-pro` (the renamed `jem-cell` account; repos 301-redirect from the old name).
-  - `3D_Georeference` (GeoMapper 3D), `dashboard-v2`, `discord-activity`, `georeference`, `route-planning`, `t3code`, `padel-up`, `Uber-clone`.
-- **CV** — BSc Aerospace Engineering, 2.1, Swansea University (2019); F1 wing-endplate aerodynamics dissertation; GVC drone licence (CAA); ~30 hours glider time.
-- **Survey Air** — Operations Manager, 2025–present, three-person drone survey startup.
+  - `3D_Georeference` (GeoMapper 3D), `dashboard-v2`, `discord-activity`, `georeference`, `route-planning`, `t3code`, `padel-up`, `Uber-clone`, `about-me`.
+- **Private work** — the Survey Air client portal and tooling, and the skills library, are described but not linked.
+- **CV** — BSc (Hons) Aerospace Engineering, 2.1, Swansea University (2019); F1 wing-endplate aerodynamics dissertation; GVC drone licence (CAA); ~30 hours glider time.
+- **Survey Air** — Operations Manager, 2025–present, small drone survey company.
 - **Contact** — `jkaraceylan@gmail.com`, `07745 795 585`, Farnham, Surrey.
 
 Nothing on the page is invented: no fabricated employers, testimonials, metrics or headshots. The one stylised element is the `dashboard-v2` card, which is explicitly badged **UI sketch**; the GeoMapper card uses a real screenshot and is badged **Open source**.
